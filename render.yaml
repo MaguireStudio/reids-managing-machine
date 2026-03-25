@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: reids-managing-machine
+    env: python
+    buildCommand: "pip install -r requirements.txt && playwright install chromium"
+    startCommand: "uvicorn main_server:app --host 0.0.0.0 --port $PORT"
+    autoDeploy: false
